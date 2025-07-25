@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="uk" data-fls-cursor="">
+	<head>
+		<style data-fls-preloader="false" rel="preload">
+			body > *:not(.fls-preloader) {opacity: 0;visibility: hidden;}[data-fls-preloader-loaded] body > *:not(.fls-preloader) {transition: opacity 0.5s ease 0s;opacity: 1;visibility: visible;}
+		</style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Home Page</title>
+		<script type="module" src="./js/app.min.js?v=1753458341244" crossorigin="anonymous"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1753458341244">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu"></button>
+						<button type="button" class="menu__btn">МЕНЮ</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#about" class="menu__link">Про мене</a>
+								</li>
+								<li class="menu__item">
+									<a href="#projects" class="menu__link">Проєкти</a>
+								</li>
+								<li class="menu__item">
+									<a href="#production" class="menu__link">Послуги</a>
+								</li>
+								<li class="menu__item">
+									<a href="#collaboration" class="menu__link">Співпраця</a>
+								</li>
+								<li class="menu__item">
+									<a href="#contacts" class="menu__link">Контакти</a>
+								</li>
+							</ul>
+							<div class="menu__contacts">
+								<a href="https://vimeo.com/vasiltsivm?fbclid=PAZXh0bgNhZW0CMTEAAad7YsFnrvorFssGHlw7DP_GbGS6KdHhIwP45ZS0Av79lbhyGA5PlYPPGmj35w_aem_unUJXWqvQMtWcOjYBM19aw" class="menu__contact" target="_blank">VIMEO</a>
+								<a href="https://www.instagram.com/vasiltsiv_movie/?source=omni_redirect" class="menu__contact" target="_blank">INSTAGRAM</a>
+								<a href="tel:+380950204295" class="menu__contact">+380 95 020 42 95</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+				<div class="overlay"></div>
+			</header>
+			<main class="page">
+				<section class="hero">
+					<div class="hero__container">
+						<div class="hero__inner">
+							<h1 class="hero__title">Vasiltsiv Movie</h1>
+							<div class="hero__body">
+								<div class="hero__projects">
+									<div class="hero__project video-block cursor-hover">
+										<video class="video-block__video" loop playsinline="" muted>
+											<source src="./assets/video/1.mp4" type="video/mp4">
+										</video>
+										<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/hero/image-1.webp">
+										<div class="overlay"></div>
+									</div>
+									<div class="hero__project video-block cursor-hover">
+										<video class="video-block__video" loop playsinline="" muted>
+											<source src="./assets/video/2.mp4" type="video/mp4">
+										</video>
+										<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/hero/image-2.webp">
+										<div class="overlay"></div>
+									</div>
+									<div class="hero__project video-block cursor-hover">
+										<video class="video-block__video" loop playsinline="" muted>
+											<source src="./assets/video/3.mp4" type="video/mp4">
+										</video>
+										<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/hero/image-3.webp">
+										<div class="overlay"></div>
+									</div>
+								</div>
+								<div class="hero__info">
+									<div class="hero__project video-block cursor-hover">
+										<video class="video-block__video" loop playsinline="" muted>
+											<source src="./assets/video/4.mp4" type="video/mp4">
+										</video>
+										<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/hero/image-4.webp">
+										<div class="overlay"></div>
+									</div>
+									<div class="hero__info-body">
+										<div class="hero__text text-line">Захоплюю моменти, які розповідають більше, ніж слова.</div>
+										<a href="chat.html" class="hero__link link-circle">LET`S REC</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="hero__mob-bg">
+						<video loop playsinline="" muted autoplay>
+							<source src="./assets/video/Mobile.mp4" type="video/mp4">
+						</video>
+					</div>
+				</section>
+				<section class="section-block" id="about">
+					<div class="section-block__container">
+						<div class="section-block__inner">
+							<div class="section-block__aside">
+								<h2 class="section-block__title">\ ПРО МЕНЕ</h2>
+							</div>
+							<div class="section-block__body about">
+								<div class="about__head">
+									<div class="about__title title text-line">Микола Васильців</div>
+									<div class="about__subtitle text-line">Video Producer</div>
+								</div>
+								<div class="about__body">
+									<div class="about__left">
+										<div class="about__text">
+											<p>
+												Створюю якісний відеоконтент для бізнесів: від іміджевих роликів до контенту для
+                                соцмереж. Відео, які зупиняють погляди і працюють на ваш бренд: динамічні, стильні та
+                                ефективні.
+											</p>
+											<p>
+												Працюю з проєктами будь-якого масштабу, з професійною командою «під ключ».
+                                Від концепції до фінального відео — забезпечуємо чіткий, злагоджений і комфортний
+                                процес, беручи на себе всі деталі, щоб ви могли зосередитися на головному.
+											</p>
+										</div>
+										<div class="about__img">
+											<img width="706" height="869" alt="Image" src="./assets/img/about/image-1.webp">
+											<div class="overlay"></div>
+										</div>
+									</div>
+									<div class="about__right">
+										<div class="about__img">
+											<img width="476" height="605" alt="Image" src="./assets/img/about/image-2.webp">
+											<div class="overlay"></div>
+										</div>
+										<div class="about__features">
+											<div class="about__item">
+												<div class="about__item-title">7+</div>
+												<div class="about__item-text">років досвіду</div>
+												<div class="about__item-line"></div>
+											</div>
+											<div class="about__item">
+												<div class="about__item-title">500+</div>
+												<div class="about__item-text">
+													комерційних відео
+													<br>
+													у портфоліо
+												</div>
+												<div class="about__item-line"></div>
+											</div>
+											<div class="about__item">
+												<div class="about__item-title">90%</div>
+												<div class="about__item-text">клієнтів, попрацювавши зі мною один раз, повертаються із новими проєктами</div>
+												<div class="about__item-line"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="scroll-line">
+					<div data-fls-marquee="" class="scroll-line__items">
+						<div class="scroll-line__item">BMW</div>
+						<div class="scroll-line__item">JEEP</div>
+						<div class="scroll-line__item">MUSTANG</div>
+						<div class="scroll-line__item">POELLE</div>
+						<div class="scroll-line__item">Adidas</div>
+						<div class="scroll-line__item">The Coat</div>
+						<div class="scroll-line__item">VooDoo ecom</div>
+						<div class="scroll-line__item">StarDesign</div>
+						<div class="scroll-line__item">K.O.Promotions</div>
+					</div>
+					<div class="scroll-line__title">мої клієнти</div>
+				</div>
+				<section class="section-block">
+					<div class="section-block__container">
+						<div class="section-block__inner">
+							<div class="section-block__aside">
+								<h2 class="section-block__title">
+									\ Чому
+									<br>
+									обирають мене?
+								</h2>
+							</div>
+							<div class="section-block__body">
+								<div data-fls-spollers="" data-fls-spollers-one="" class="spollers">
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Якість, що привертає увагу</summary>
+										<div class="spollers__body">Створюю відео, яке чіпляє, захоплює та запам’ятовується</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Індивідуальний підхід</summary>
+										<div class="spollers__body">Кожен проєкт адаптую під ваші цілі та стиль</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Відео, що працює на результат</summary>
+										<div class="spollers__body">Підвищує впізнаваність, залучає клієнтів і зміцнює бренд</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Повний цикл створення</summary>
+										<div class="spollers__body">Від ідеї до готового продукту</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Швидкість та відповідальність</summary>
+										<div class="spollers__body">Дотримуюся дедлайнів і вимог клієнта</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Розуміння трендів</summary>
+										<div class="spollers__body">Працюю з актуальними форматами та стилями</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Досвід роботи з брендами</summary>
+										<div class="spollers__body">Створюю контент, який формує імідж, викликає довіру і допомагає бізнесу рости</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">Легкість у співпраці</summary>
+										<div class="spollers__body">Зі мною просто, ефективно та без зайвого стресу</div>
+									</details>
+									<details class="spollers__item">
+										<summary class="spollers__title cursor-hover">1000+1 ідея</summary>
+										<div class="spollers__body">Ділюся досвідом, пропоную креативні рішення</div>
+									</details>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-block" id="projects">
+					<div class="section-block__container">
+						<div class="section-block__inner">
+							<div class="section-block__body projects">
+								<div class="projects__head">
+									<div class="projects__title title">Проєкти</div>
+									<a data-fls-dynamic=".projects, 767.98" href="works.html" class="projects__btn button">
+										Переглянути
+										<br>
+										всі роботи
+									</a>
+									<div data-fls-slider="" class="projects__thumbs swiper">
+										<div class="projects__thumbs-wrapper swiper-wrapper">
+											<div class="projects__thumbs-slide swiper-slide active">
+												<div class="projects__thumbs-num">01</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+											<div class="projects__thumbs-slide swiper-slide">
+												<div class="projects__thumbs-num">02</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+											<div class="projects__thumbs-slide swiper-slide">
+												<div class="projects__thumbs-num">03</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+											<div class="projects__thumbs-slide swiper-slide">
+												<div class="projects__thumbs-num">04</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+											<div class="projects__thumbs-slide swiper-slide">
+												<div class="projects__thumbs-num">05</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+											<div class="projects__thumbs-slide swiper-slide">
+												<div class="projects__thumbs-num">06</div>
+												<div class="projects__thumbs-lines">
+													<span></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div data-fls-slider="" class="projects__slider swiper">
+									<div class="projects__wrapper swiper-wrapper">
+										<a href="works.html?category=presentation" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/1.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-1.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">Презентаційний відеоролик</div>
+										</a>
+										<a href="works.html?category=ads" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/2.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-2.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">Рекламний відеоролик</div>
+										</a>
+										<a href="works.html?category=subject" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/3.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-3.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">предметний відеоролик</div>
+										</a>
+										<a href="works.html?category=reportage" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/4.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-4.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">Репортажний відеоролик</div>
+										</a>
+										<a href="works.html?category=socials" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/Mobile.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-5.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">для Instagram / TikTok</div>
+										</a>
+										<a href="works.html?category=yt" class="projects__card swiper-slide">
+											<div class="projects__card-bg video-block">
+												<video class="video-block__video" loop playsinline="" muted>
+													<source src="./assets/video/Mobile.mp4" type="video/mp4">
+												</video>
+												<img class="video-block__img" alt="image" loading="eager" width="348" height="500" src="./assets/img/projects/image-6.webp">
+												<div class="video-block__btn">Open</div>
+											</div>
+											<div class="projects__card-title">для Youtube</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-block" id="production">
+					<div class="section-block__container">
+						<div class="section-block__inner">
+							<div class="section-block__body production">
+								<div class="production__head">
+									<div class="production__head-body">
+										<div class="production__title title">
+											VIDEO
+											<br>
+											PRODUCTION
+										</div>
+										<div class="production__text">
+											Відеоконтент для бізнесу «під ключ» — від ідеї до фінального відео. Комплексний підхід або
+                            окремі етапи: Production чи
+                            Post-Production.
+										</div>
+									</div>
+									<a data-fls-dynamic=".production, 767.98" href="chat.html" class="production__btn button-2">Поспілкуватися</a>
+								</div>
+								<div class="production__rows">
+									<div class="production__row cursor-hover">
+										<div class="production__row-body">
+											<div class="production__row-title">
+												<span>PRE-PRODUCTION</span>
+												<span class="production__row-arrow">
+													<svg width="19" height="19" viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M18.6109 17.9782C18.6133 18.167 18.54 18.3488 18.4065 18.4823C18.273 18.6158 18.0912 18.6892 17.9024 18.6867L0.710905 18.4658C0.324338 18.4608 0.014705 18.1431 0.0196804 17.7566C0.0248497 17.3703 0.341916 17.0613 0.728168 17.066L16.1996 17.2656L0.445741 1.51177C0.172374 1.2384 0.172374 0.794909 0.445741 0.521542C0.719108 0.248176 1.1626 0.248176 1.43597 0.521542L17.1898 16.2754L16.9902 0.803972L18.39 0.786708L18.6109 17.9782ZM17.6808 0.095484C18.0673 0.0905086 18.385 0.400141 18.39 0.786708L16.9902 0.803972C16.9855 0.41772 17.2945 0.100653 17.6808 0.095484Z" fill="currentColor"></path>
+													</svg>
+												</span>
+											</div>
+											<div class="production__row-content">
+												<div class="production__row-text">
+													<ul>
+														<li>Генерація ідей</li>
+														<li>Написання сценарію</li>
+														<li>Розкадровка роликів</li>
+														<li>Пошук локацій</li>
+														<li>Підбір акторів та моделей</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="production__row cursor-hover">
+										<div class="production__row-body">
+											<div class="production__row-title">
+												<span>PRODUCTION</span>
+												<span class="production__row-arrow">
+													<svg width="19" height="19" viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M18.6109 17.9782C18.6133 18.167 18.54 18.3488 18.4065 18.4823C18.273 18.6158 18.0912 18.6892 17.9024 18.6867L0.710905 18.4658C0.324338 18.4608 0.014705 18.1431 0.0196804 17.7566C0.0248497 17.3703 0.341916 17.0613 0.728168 17.066L16.1996 17.2656L0.445741 1.51177C0.172374 1.2384 0.172374 0.794909 0.445741 0.521542C0.719108 0.248176 1.1626 0.248176 1.43597 0.521542L17.1898 16.2754L16.9902 0.803972L18.39 0.786708L18.6109 17.9782ZM17.6808 0.095484C18.0673 0.0905086 18.385 0.400141 18.39 0.786708L16.9902 0.803972C16.9855 0.41772 17.2945 0.100653 17.6808 0.095484Z" fill="currentColor"></path>
+													</svg>
+												</span>
+											</div>
+											<div class="production__row-content">
+												<div class="production__row-text">
+													<ul>
+														<li>Технічне забезпечення</li>
+														<li>Професійний склад команди на знімальному майданчику</li>
+														<li>Зйомка</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="production__row cursor-hover">
+										<div class="production__row-body">
+											<div class="production__row-title">
+												<span>POST-PRODUCTION</span>
+												<span class="production__row-arrow">
+													<svg width="19" height="19" viewbox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M18.6109 17.9782C18.6133 18.167 18.54 18.3488 18.4065 18.4823C18.273 18.6158 18.0912 18.6892 17.9024 18.6867L0.710905 18.4658C0.324338 18.4608 0.014705 18.1431 0.0196804 17.7566C0.0248497 17.3703 0.341916 17.0613 0.728168 17.066L16.1996 17.2656L0.445741 1.51177C0.172374 1.2384 0.172374 0.794909 0.445741 0.521542C0.719108 0.248176 1.1626 0.248176 1.43597 0.521542L17.1898 16.2754L16.9902 0.803972L18.39 0.786708L18.6109 17.9782ZM17.6808 0.095484C18.0673 0.0905086 18.385 0.400141 18.39 0.786708L16.9902 0.803972C16.9855 0.41772 17.2945 0.100653 17.6808 0.095484Z" fill="currentColor"></path>
+													</svg>
+												</span>
+											</div>
+											<div class="production__row-content">
+												<div class="production__row-text">
+													<ul>
+														<li>Монтаж</li>
+														<li>Музика та sound-design</li>
+														<li>Дикторське озвучування</li>
+														<li>Кольорокорекція</li>
+														<li>Титри/візуальні ефекти/інфографіка</li>
+														<li>2D/3D-animation</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section-block" id="collaboration">
+					<div class="section-block__container">
+						<div class="section-block__inner">
+							<div class="section-block__body collaboration">
+								<div class="collaboration__head">
+									<div class="collaboration__title title">
+										ЕТАПИ
+										<br>
+										СПІВПРАЦІ
+									</div>
+									<div data-fls-dynamic=".collaboration, 767.98" class="collaboration__arrows">
+										<button type="button" class="swiper-button-prev">
+											<svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M0.15723 8L8.09473 15.9902L9.08789 15.0029L2.8252 8.70019L19.8438 8.70019L19.8438 7.2998L2.8252 7.2998L8.59473 1.49316L7.60156 0.506836L0.15723 8ZM7.60156 0.506836L8.59473 1.49316L9.08789 0.99707L8.09473 0.00976563L7.60156 0.506836Z" fill="currentColor"></path>
+											</svg>
+										</button>
+										<button type="button" class="swiper-button-next">
+											<svg width="20" height="16" viewbox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M19.8428 8L11.9053 15.9902L10.9121 15.0029L17.1748 8.70019L0.156249 8.70019L0.156249 7.2998L17.1748 7.2998L11.4053 1.49316L12.3984 0.506836L19.8428 8ZM12.3984 0.506836L11.4053 1.49316L10.9121 0.99707L11.9053 0.00976563L12.3984 0.506836Z" fill="currentColor"></path>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div data-fls-slider="" class="collaboration__slider swiper">
+									<div class="collaboration__wrapper swiper-wrapper">
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Знайомство та обговорення ідей</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Короткий дзвінок або зустріч</li>
+													<li>Обговорення вашої цілі, завдань та цільової аудиторії для відео</li>
+													<li>Аналіз вашого бренду та бажаних референсів</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Бриф і референси</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Заповнення короткого брифу</li>
+													<li>Підбір референсів та узгодження стилістики</li>
+													<li>Генерація ідей на основі ваших потреб</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Комерційна пропозиція</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Деталізований розрахунок бюджету згідно із потребами</li>
+													<li>Узгодження фінальних умов</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Розробка сценарію та концепції</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Написання детального сценарію</li>
+													<li>Розкадровка для візуалізації</li>
+													<li>Узгодження ключових елементів відео</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Планування зйомки</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Пошук і бронювання ідеальних локацій</li>
+													<li>Підбір акторів, моделей, дикторів</li>
+													<li>Узгодження таймінгу зйомок</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Зйомка</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Реалізація проєкту згідно з планом</li>
+													<li>Контроль якості, динаміки та емоцій у кадрі</li>
+													<li>Робота з професійним обладнанням та командою</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Монтаж та обробка</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Монтаж, кольорокорекція, графіка та спецефекти</li>
+													<li>Додавання музики та саунд-дизайн</li>
+													<li>Оптимізація відео під необхідні платформи</li>
+												</ul>
+											</div>
+										</div>
+										<div class="collaboration__slide swiper-slide">
+											<div class="collaboration__slide-title">Готове відео</div>
+											<div class="collaboration__slide-text">
+												<ul>
+													<li>Фінальний ролик  у потрібних форматах</li>
+													<li>За потреби – коригування та доопрацювання</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="collaboration__line"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer" id="contacts">
+				<div class="footer__container">
+					<div class="footer__body">
+						<a href="index.html" class="footer__logo">
+							<img src="./assets/img/logo-2.svg" alt="logo">
+						</a>
+						<div class="footer__columns">
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="https://vimeo.com/vasiltsivm?fbclid=PAZXh0bgNhZW0CMTEAAad7YsFnrvorFssGHlw7DP_GbGS6KdHhIwP45ZS0Av79lbhyGA5PlYPPGmj35w_aem_unUJXWqvQMtWcOjYBM19aw" class="footer__link" target="_blank">VIMEO</a>
+								</li>
+								<li class="footer__item">
+									<a href="https://www.instagram.com/vasiltsiv_movie/?source=omni_redirect" class="footer__link" target="_blank">INSTAGRAM</a>
+								</li>
+							</ul>
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a href="mailto:vasiltsivmovie@gmail.com" class="footer__link">vasiltsivmovie@gmail.com</a>
+								</li>
+								<li class="footer__item">
+									<a href="tel:+380950204295" class="footer__link">+380 95 020 42 95</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer__btns">
+							<a href="chat.html" class="footer__btn button-white">
+								Безкоштовна
+								<br>
+								консультація
+							</a>
+							<button type="button" class="footer__btn button scroll-top">Вгору</button>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

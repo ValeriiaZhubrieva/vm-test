@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="uk" data-fls-cursor="">
+	<head>
+		<style data-fls-preloader="false" rel="preload">
+			body > *:not(.fls-preloader) {opacity: 0;visibility: hidden;}[data-fls-preloader-loaded] body > *:not(.fls-preloader) {transition: opacity 0.5s ease 0s;opacity: 1;visibility: visible;}
+		</style>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewiExpanded-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="./assets/fonts/RFDewi-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Бриф</title>
+		<script type="module" src="./js/app.min.js?v=1753458341244" crossorigin="anonymous"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1753458341244">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+					<a href="index.html" class="header__logo">
+						<img src="./assets/img/logo.svg" alt="logo">
+					</a>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu"></button>
+						<button type="button" class="menu__btn">МЕНЮ</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="index.html#about" class="menu__link">Про мене</a>
+								</li>
+								<li class="menu__item">
+									<a href="works.html#works" class="menu__link">Проєкти</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html#production" class="menu__link">Послуги</a>
+								</li>
+								<li class="menu__item">
+									<a href="index.html#collaboration" class="menu__link">Співпраця</a>
+								</li>
+								<li class="menu__item">
+									<a href="#contacts" class="menu__link">Контакти</a>
+								</li>
+							</ul>
+							<div class="menu__contacts">
+								<a href="https://vimeo.com/vasiltsivm?fbclid=PAZXh0bgNhZW0CMTEAAad7YsFnrvorFssGHlw7DP_GbGS6KdHhIwP45ZS0Av79lbhyGA5PlYPPGmj35w_aem_unUJXWqvQMtWcOjYBM19aw" class="menu__contact" target="_blank">VIMEO</a>
+								<a href="https://www.instagram.com/vasiltsiv_movie/?source=omni_redirect" class="menu__contact" target="_blank">INSTAGRAM</a>
+								<a href="tel:+380950204295" class="menu__contact">+380 95 020 42 95</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</header>
+			<main class="page">
+				<section class="brif">
+					<div class="brif__container">
+						<form data-fls-form="ajax" class="brif__content form-block" action="/sendmail/index.php" method="POST">
+							<div class="form-block__head">
+								<h1 class="form-block__title">Бриф</h1>
+								<div class="form-block__subtitle">Розкажіть про ваш бренд, ідею та цілі</div>
+								<div class="form-block__text">(*) обов’язкові поля</div>
+							</div>
+							<div class="form-block__body">
+								<div class="form-block__inner">
+									<div class="form-block__label">Контактна особа</div>
+									<input data-fls-form-validatenow="" autocomplete="off" type="text" name="name" placeholder="Ваше ім’я *" class="form-block__input input" required>
+									<input autocomplete="off" type="text" name="lastname" placeholder="Ваше прізвище" class="form-block__input input">
+									<input autocomplete="off" type="text" name="position" placeholder="Посада" class="form-block__input input">
+									<input data-fls-form-validatenow="" autocomplete="off" type="tel" name="tel" placeholder="Ваш телефон *" class="form-block__input input" required>
+									<input autocomplete="off" type="email" name="email" placeholder="Email" class="form-block__input input">
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Про компанію / бренд</div>
+									<input autocomplete="off" type="text" name="name-company" placeholder="Назва компанії" class="form-block__input input">
+									<textarea data-fls-input-autoheight="" autocomplete="off" name="descr-brand" placeholder="Короткий опис діяльності" class="form-block__input input"></textarea>
+									<input autocomplete="off" type="text" name="link" placeholder="Сайт / соцмережі" class="form-block__input input">
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Вид ролика *</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Рекламний" name="video-type[]" required>
+											<span class="checkbox__text">Рекламний</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Іміджевий" name="video-type[]">
+											<span class="checkbox__text">Іміджевий</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Репортажний" name="video-type[]">
+											<span class="checkbox__text">Репортажний</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Предметний" name="video-type[]">
+											<span class="checkbox__text">Предметний</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Контент для соцмереж (Reels, TikTok)" name="video-type[]">
+											<span class="checkbox__text">Контент для соцмереж (Reels, TikTok)</span>
+										</label>
+									</div>
+									<input autocomplete="off" type="text" name="other" placeholder="Інше" class="form-block__input input">
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Скільки роликів потрібно створити? *</div>
+									<div class="form-block__row">
+										<div data-fls-radio="" class="options">
+											<label class="options__item">
+												<input class="options__input" type="radio" value="1-2" name="count-video" required>
+												<span class="options__text">1-2</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" value="3-5" name="count-video" required>
+												<span class="options__text">3-5</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" value="5-10" name="count-video" required>
+												<span class="options__text">5-10</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" value="Постійна співпраця" name="count-video" required>
+												<span class="options__text">Постійна співпраця</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Мета відео</div>
+									<textarea data-fls-input-autoheight="" autocomplete="off" name="video-purpose" placeholder="Наприклад: привернути увагу, підвищити впізнаваність / продажі, презентувати товар тощо" class="form-block__input input"></textarea>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Цільова аудиторія</div>
+									<textarea data-fls-input-autoheight="" autocomplete="off" name="target-audience" placeholder="Коротко опишіть вашу цільову аудиторію (вік, стать, географія, інтереси, стиль життя тощо)" class="form-block__input input"></textarea>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Ідеї та референси</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="У мене вже є ідея або сценарій" name="references-idea[]">
+											<span class="checkbox__text">У мене вже є ідея або сценарій</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="У мене є приклади / референси<" name="references-idea[]">
+											<span class="checkbox__text">У мене є приклади / референси</span>
+										</label>
+									</div>
+									<input autocomplete="off" type="text" name="references" placeholder="Якщо так, вставте посилання / текст" class="form-block__input input">
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Технічні параметри</div>
+									<input autocomplete="off" type="text" name="duration" placeholder="Орієнтовна тривалість кожного ролика" class="form-block__input input">
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Горизонтальний формат відео" name="format[]">
+											<span class="checkbox__text">Горизонтальний формат відео</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Вертикальний формат відео" name="format[]">
+											<span class="checkbox__text">Вертикальний формат відео</span>
+										</label>
+									</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Потрібна озвучка" name="parameters[]">
+											<span class="checkbox__text">Потрібна озвучка</span>
+										</label>
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Потрібні субтитри" name="parameters[]">
+											<span class="checkbox__text">Потрібні субтитри</span>
+										</label>
+									</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Потрібна графіка / анімація" name="animations">
+											<span class="checkbox__text">Потрібна графіка / анімація</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Знімальний процес</div>
+									<div class="form-block__row">
+										<div data-fls-radio="" class="options">
+											<label class="options__item">
+												<input class="options__input" type="radio" value="Потрібна допомога з пошуком локації" name="location">
+												<span class="options__text">Потрібна допомога з пошуком локації</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" value="Вже підібрана локація для зйомок" name="location">
+												<span class="options__text">Вже підібрана локація для зйомок</span>
+											</label>
+										</div>
+									</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Потрібні актори / моделі" name="actors">
+											<span class="checkbox__text">Потрібні актори / моделі</span>
+										</label>
+									</div>
+									<input autocomplete="off" type="text" name="filming-days" placeholder="Орієнтовна кількість знімальних днів" class="form-block__input input">
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Монтаж та постпродакшн</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Робота згідно з брендбуком / гайдлайном" name="guides">
+											<span class="checkbox__text">Робота згідно з брендбуком / гайдлайном</span>
+										</label>
+									</div>
+									<div class="form-block__row">
+										<label data-fls-checkbox="" class="checkbox">
+											<input class="checkbox__input" type="checkbox" value="Потрібна музика" name="music">
+											<span class="checkbox__text">Потрібна музика</span>
+										</label>
+									</div>
+									<div class="form-block__row">
+										<div data-fls-radio="" class="options">
+											<label class="options__item">
+												<input class="options__input" type="radio" value="Спокійний стиль монтажу" name="style">
+												<span class="options__text">Спокійний стиль монтажу</span>
+											</label>
+											<label class="options__item">
+												<input class="options__input" type="radio" value="Динамічний стиль монтажу" name="style">
+												<span class="options__text">Динамічний стиль монтажу</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Бюджет та термін виконання *</div>
+									<input data-fls-form-validatenow="" autocomplete="off" type="text" name="budget" placeholder="Орієнтовний бюджет" class="form-block__input input" required>
+									<input data-fls-form-validatenow="" autocomplete="off" type="text" name="date" placeholder="До якої дати має бути готове відео?" class="form-block__input input" required>
+								</div>
+								<div class="form-block__inner">
+									<div class="form-block__label">Коментарі</div>
+									<textarea data-fls-input-autoheight="" autocomplete="off" name="comments" placeholder="Інше, що важливо врахувати" class="form-block__input input"></textarea>
+								</div>
+							</div>
+							<div class="form-block__error-text">Заповніть обов’язкові поля (*)</div>
+							<div class="form-block__btns">
+								<button type="submit" class="form-block__send button-white" disabled>
+									<span>Надіслати</span>
+									<span>Надіслано</span>
+								</button>
+							</div>
+						</form>
+					</div>
+				</section>
+			</main>
+			<footer class="footer footer--2" id="contacts">
+				<div class="footer__container">
+					<div class="footer__inner">
+						<div class="footer__title">VASILTSIV MOVIE</div>
+						<ul class="footer__list">
+							<li class="footer__item footer__item--mob-pos-3">
+								<a href="mailto:vasiltsivmovie@gmail.com" class="footer__link">vasiltsivmovie@gmail.com</a>
+							</li>
+							<li class="footer__item footer__item--mob-pos-4">
+								<a href="tel:+380950204295" class="footer__link">+380 95 020 42 95</a>
+							</li>
+							<li class="footer__item footer__item--mob-pos-1">
+								<a href="https://vimeo.com/vasiltsivm?fbclid=PAZXh0bgNhZW0CMTEAAad7YsFnrvorFssGHlw7DP_GbGS6KdHhIwP45ZS0Av79lbhyGA5PlYPPGmj35w_aem_unUJXWqvQMtWcOjYBM19aw" class="footer__link" target="_blank">VIMEO</a>
+							</li>
+							<li class="footer__item footer__item--mob-pos-2">
+								<a href="https://www.instagram.com/vasiltsiv_movie/?source=omni_redirect" class="footer__link" target="_blank">INSTAGRAM</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
