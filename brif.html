@@ -15,8 +15,8 @@
 		<link rel="preload" href="./assets/fonts/RFDewi-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Бриф</title>
-		<script type="module" src="./js/app.min.js?v=1753458341244" crossorigin="anonymous"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1753458341244">
+		<script type="module" src="./js/app.min.js?v=1753967980414" crossorigin="anonymous"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1753967980414">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -58,7 +58,7 @@
 			<main class="page">
 				<section class="brif">
 					<div class="brif__container">
-						<form data-fls-form="ajax" class="brif__content form-block" action="/sendmail/index.php" method="POST">
+						<form data-fls-form="ajax" class="brif__content form-block" action="./sendmail/index.php" method="POST">
 							<div class="form-block__head">
 								<h1 class="form-block__title">Бриф</h1>
 								<div class="form-block__subtitle">Розкажіть про ваш бренд, ідею та цілі</div>
@@ -83,27 +83,27 @@
 									<div class="form-block__label">Вид ролика *</div>
 									<div class="form-block__row">
 										<label data-fls-checkbox="" class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="Рекламний" name="video-type[]" required>
+											<input class="checkbox__input" type="checkbox" value="Рекламний" name="video-type[]" data-fls-checkbox-group="video-type">
 											<span class="checkbox__text">Рекламний</span>
 										</label>
 										<label data-fls-checkbox="" class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="Іміджевий" name="video-type[]">
+											<input class="checkbox__input" type="checkbox" value="Іміджевий" name="video-type[]" data-fls-checkbox-group="video-type">
 											<span class="checkbox__text">Іміджевий</span>
 										</label>
 										<label data-fls-checkbox="" class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="Репортажний" name="video-type[]">
+											<input class="checkbox__input" type="checkbox" value="Репортажний" name="video-type[]" data-fls-checkbox-group="video-type">
 											<span class="checkbox__text">Репортажний</span>
 										</label>
 										<label data-fls-checkbox="" class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="Предметний" name="video-type[]">
+											<input class="checkbox__input" type="checkbox" value="Предметний" name="video-type[]" data-fls-checkbox-group="video-type">
 											<span class="checkbox__text">Предметний</span>
 										</label>
 										<label data-fls-checkbox="" class="checkbox">
-											<input class="checkbox__input" type="checkbox" value="Контент для соцмереж (Reels, TikTok)" name="video-type[]">
+											<input class="checkbox__input" type="checkbox" value="Контент для соцмереж (Reels, TikTok)" name="video-type[]" data-fls-checkbox-group="video-type">
 											<span class="checkbox__text">Контент для соцмереж (Reels, TikTok)</span>
 										</label>
 									</div>
-									<input autocomplete="off" type="text" name="other" placeholder="Інше" class="form-block__input input">
+									<input autocomplete="off" type="text" data-checkbox-other="video-type" name="other" placeholder="Інше" class="form-block__input input">
 								</div>
 								<div class="form-block__inner">
 									<div class="form-block__label">Скільки роликів потрібно створити? *</div>

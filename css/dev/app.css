@@ -199,7 +199,7 @@ body {
   transition: transform 0.5s ease;
 }
 .video-block.show-video {
-  transform: scaleY(0.93);
+  transform: scaleY(0.95);
 }
 .video-block.show-video .video-block__img {
   opacity: 0;
@@ -1779,6 +1779,12 @@ textarea {
 .input.--form-error {
   border-color: #fe6627;
 }
+.input:-webkit-autofill, .input:-webkit-autofill:hover, .input:-webkit-autofill:focus, .input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 62.5rem #000 inset !important;
+  -webkit-text-fill-color: #fff !important;
+  background: #000 !important;
+  color: #fff !important;
+}
 
 .input[placeholder]:not([data-fls-placeholder-nohiden])::placeholder {
   color: #7f7f7f;
@@ -2746,7 +2752,7 @@ textarea.input::-webkit-scrollbar {
     opacity: 1;
   }
   .works__card:hover .works__card-img::before, .works__card:hover .works__card-img::after {
-    height: 5%;
+    height: 1.25rem;
   }
   .works__card:hover .works__card-btn {
     opacity: 1;

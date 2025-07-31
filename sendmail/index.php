@@ -64,7 +64,8 @@ $commentsBrif = isset($_POST['comments']) ? trim($_POST['comments']) : '';
 // Від кого лист
 $mail->setFrom('some@gmail.com', 'Лист з сайту');
 // Кому
-$mail->addAddress('some@gmail.com');
+$mail->addAddress('vasiltsivmovie@gmail.com');
+$mail->addAddress('vladyslav.havrylevskyj@gmail.com');
 // Тема
 $mail->Subject = 'Лист з сайту';
 

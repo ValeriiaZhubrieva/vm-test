@@ -507,12 +507,27 @@ window.addEventListener("load", () => {
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: "auto"
+  });
 });
 if (document.querySelector(".video-block")) {
-  document.querySelectorAll(".video-block").forEach((block) => {
+  const allBlocks = document.querySelectorAll(".video-block");
+  allBlocks.forEach((block) => {
     const video = block.querySelector(".video-block__video");
+    const pauseAllVideos = () => {
+      allBlocks.forEach((otherBlock) => {
+        const otherVideo = otherBlock.querySelector(".video-block__video");
+        if (otherBlock !== block) {
+          otherBlock.classList.remove("show-video");
+          otherVideo == null ? void 0 : otherVideo.pause();
+          (otherVideo == null ? void 0 : otherVideo.currentTime) && (otherVideo.currentTime = 0);
+        }
+      });
+    };
     block.addEventListener("mouseenter", () => {
+      pauseAllVideos();
       block.classList.add("show-video");
       video.play().catch((error) => {
         console.error("Error playing video:", error);
@@ -522,18 +537,12 @@ if (document.querySelector(".video-block")) {
       block.classList.remove("show-video");
       video.pause();
     });
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 767.98) {
       let tapped = false;
       block.addEventListener("touchstart", (e) => {
         if (!tapped) {
           e.preventDefault();
-          document.querySelectorAll(".video-block").forEach((otherBlock) => {
-            const otherVideo = otherBlock.querySelector(".video-block__video");
-            if (otherVideo) {
-              otherVideo.pause();
-              otherBlock.classList.remove("show-video");
-            }
-          });
+          pauseAllVideos();
           block.classList.add("show-video");
           video.play();
           tapped = true;
@@ -616,10 +625,12 @@ if (document.querySelectorAll(".video-controlls").length) {
 			</svg>`;
     });
     fullscreenBtn.addEventListener("click", () => {
-      if (document.fullscreenElement) {
+      if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      } else if (document.fullscreenElement) {
         document.exitFullscreen();
         container.classList.remove("fullscreen-video");
-      } else {
+      } else if (container.requestFullscreen) {
         container.requestFullscreen();
         container.classList.add("fullscreen-video");
       }
@@ -12255,30 +12266,46 @@ marquee();
 const productionRowContainer = document.querySelectorAll(".production__row");
 const breakpointRow = window.matchMedia("(min-width: 991.98px)");
 if (productionRowContainer.length) {
-  productionRowContainer.forEach((row) => {
+  productionRowContainer.forEach((row, _, allRows) => {
     const productionRowBtn = row.querySelector(".production__row-title");
     let clickHandler, hoverEnterHandler, hoverLeaveHandler;
     const isTouchDevice = "ontouchstart" in window;
+    const closeAllExcept = (currentRow) => {
+      allRows.forEach((otherRow) => {
+        if (otherRow !== currentRow) {
+          otherRow.classList.remove("is-open");
+        }
+      });
+    };
     const checkerRow = function() {
-      productionRowBtn.removeEventListener("click", clickHandler);
+      row.removeEventListener("click", clickHandler);
       row.removeEventListener("mouseenter", hoverEnterHandler);
       row.removeEventListener("mouseleave", hoverLeaveHandler);
       if (breakpointRow.matches && !isTouchDevice) {
         clickHandler = (e) => {
           if (productionRowBtn.tagName === "A") e.preventDefault();
-          row.classList.toggle("is-open");
+          const isAlreadyOpen = row.classList.contains("is-open");
+          closeAllExcept(row);
+          row.classList.toggle("is-open", !isAlreadyOpen);
         };
-        hoverEnterHandler = () => row.classList.add("is-open");
-        hoverLeaveHandler = () => row.classList.remove("is-open");
-        productionRowBtn.addEventListener("click", clickHandler);
+        hoverEnterHandler = () => {
+          closeAllExcept(row);
+          row.classList.add("is-open");
+        };
+        hoverLeaveHandler = () => {
+          row.classList.remove("is-open");
+        };
+        row.addEventListener("click", clickHandler);
         row.addEventListener("mouseenter", hoverEnterHandler);
         row.addEventListener("mouseleave", hoverLeaveHandler);
       } else {
         clickHandler = (e) => {
           if (productionRowBtn.tagName === "A") e.preventDefault();
-          row.classList.toggle("is-open");
+          const isAlreadyOpen = row.classList.contains("is-open");
+          closeAllExcept(row);
+          row.classList.toggle("is-open", !isAlreadyOpen);
         };
-        productionRowBtn.addEventListener("click", clickHandler);
+        row.addEventListener("click", clickHandler);
       }
     };
     breakpointRow.addEventListener("change", checkerRow);
@@ -12308,7 +12335,7 @@ document.querySelector("textarea[data-fls-input-autoheight]") ? window.addEventL
 let formValidate = {
   getErrors(form) {
     let error = 0;
-    let formRequiredItems = form.querySelectorAll("[required]");
+    let formRequiredItems = form.querySelectorAll("[required], input[type='checkbox'][data-fls-checkbox-group]");
     if (formRequiredItems.length) {
       formRequiredItems.forEach((formRequiredItem) => {
         if ((formRequiredItem.offsetParent !== null || formRequiredItem.tagName === "SELECT") && !formRequiredItem.disabled) {
@@ -12320,14 +12347,29 @@ let formValidate = {
     return error;
   },
   watchFormFields(form) {
-    const formRequiredItems = form.querySelectorAll("[required]");
-    formRequiredItems.forEach((field) => {
+    form.querySelectorAll("[required]").forEach((field) => {
       field.addEventListener("input", () => {
         this.validateInput(field);
         this.updateFormState(form);
       });
       field.addEventListener("change", () => {
         this.validateInput(field);
+        this.updateFormState(form);
+      });
+    });
+    form.querySelectorAll('input[type="checkbox"][data-fls-checkbox-group]').forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
+        this.validateInput(checkbox);
+        this.updateFormState(form);
+      });
+    });
+    form.querySelectorAll("input[data-checkbox-other]").forEach((input) => {
+      input.addEventListener("input", () => {
+        const groupName = input.dataset.checkboxOther;
+        const checkbox = form.querySelector(`input[data-fls-checkbox-group="${groupName}"]`);
+        if (checkbox) {
+          this.validateInput(checkbox);
+        }
         this.updateFormState(form);
       });
     });
@@ -12366,32 +12408,30 @@ let formValidate = {
         this.addSuccess(formRequiredItem);
       }
     } else if (formRequiredItem.type === "checkbox") {
+      const groupName = formRequiredItem.dataset.flsCheckboxGroup;
       const form = formRequiredItem.closest("form");
-      const checkboxes = form.querySelectorAll(`input[type="checkbox"][name="${formRequiredItem.name}"]`);
-      const isGroup = checkboxes.length > 1;
-      const isGroupRequired = Array.from(checkboxes).some((cb) => cb.required);
-      if (isGroup && isGroupRequired) {
-        const oneChecked = Array.from(checkboxes).some((cb) => cb.checked);
-        if (!oneChecked) {
-          checkboxes.forEach((cb) => {
-            this.addError(cb);
-            this.removeSuccess(cb);
-          });
-          error++;
-        } else {
-          checkboxes.forEach((cb) => {
-            this.removeError(cb);
-            this.addSuccess(cb);
-          });
+      const checkboxes = form.querySelectorAll(`input[type="checkbox"][data-fls-checkbox-group="${groupName}"]`);
+      const otherInput = form.querySelector(`input[data-checkbox-other="${groupName}"]`);
+      const oneChecked = Array.from(checkboxes).some((cb) => cb.checked);
+      const otherFilled = otherInput && otherInput.value.trim() !== "";
+      if (!oneChecked && !otherFilled) {
+        checkboxes.forEach((cb) => {
+          this.addError(cb);
+          this.removeSuccess(cb);
+        });
+        if (otherInput) {
+          this.addError(otherInput);
+          this.removeSuccess(otherInput);
         }
+        error++;
       } else {
-        if (!formRequiredItem.checked) {
-          this.addError(formRequiredItem);
-          this.removeSuccess(formRequiredItem);
-          error++;
-        } else {
-          this.removeError(formRequiredItem);
-          this.addSuccess(formRequiredItem);
+        checkboxes.forEach((cb) => {
+          this.removeError(cb);
+          this.addSuccess(cb);
+        });
+        if (otherInput) {
+          this.removeError(otherInput);
+          this.addSuccess(otherInput);
         }
       }
     } else if (formRequiredItem.type === "radio") {
