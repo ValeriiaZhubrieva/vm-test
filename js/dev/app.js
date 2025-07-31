@@ -503,13 +503,15 @@ const scrollTopButton = document.querySelector(".scroll-top");
 if (scrollTopButton) {
   scrollTopButton.addEventListener("click", () => scrollToTop());
 }
-window.addEventListener("load", () => {
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-  window.scrollTo({
-    top: 0,
-    behavior: "auto"
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.addEventListener("DOMContentLoaded", () => {
+  requestAnimationFrame(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
   });
 });
 if (document.querySelector(".video-block")) {
@@ -11555,180 +11557,190 @@ window.addEventListener("resize", () => {
 const initAnimation = () => {
   const splitText = () => {
     const lines = document.querySelectorAll(".text-line");
-    lines.forEach((line) => {
-      const words = line.textContent.split(" ");
-      line.innerHTML = "";
-      words.forEach((word) => {
-        const wordSpan = document.createElement("span");
-        wordSpan.classList.add("word");
-        wordSpan.textContent = word + " ";
-        line.appendChild(wordSpan);
+    if (lines.length) {
+      lines.forEach((line) => {
+        const words = line.textContent.split(" ");
+        line.innerHTML = "";
+        words.forEach((word) => {
+          const wordSpan = document.createElement("span");
+          wordSpan.classList.add("word");
+          wordSpan.textContent = word + " ";
+          line.appendChild(wordSpan);
+        });
       });
-    });
+    }
   };
   const startAnimation = () => {
-    gsapWithCSS.to(".header .overlay", {
-      scaleY: 0,
-      delay: 0.5,
-      duration: 1.5,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".header",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".hero__project .overlay", {
-      scaleY: 0,
-      delay: 0.3,
-      duration: 1.5,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".hero__projects",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".hero__project img", {
-      scale: 1,
-      delay: 0.3,
-      duration: 1.5,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".hero__projects",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".hero__title", {
-      opacity: 1,
-      delay: 1,
-      duration: 1.5,
-      ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".hero .text-line .word", {
-      opacity: 1,
-      delay: 1.5,
-      duration: 1,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
+    if (document.querySelector(".header .overlay")) {
+      gsapWithCSS.to(".header .overlay", {
+        scaleY: 0,
+        delay: 0.5,
+        duration: 1.5,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".header",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+    }
+    if (document.querySelector(".hero")) {
+      gsapWithCSS.to(".hero__project .overlay", {
+        scaleY: 0,
+        delay: 0.3,
+        duration: 1.5,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".hero__projects",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+      gsapWithCSS.to(".hero__project img", {
+        scale: 1,
+        delay: 0.3,
+        duration: 1.5,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".hero__projects",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+      gsapWithCSS.to(".hero__title", {
+        opacity: 1,
+        delay: 1,
+        duration: 1.5,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+      gsapWithCSS.to(".hero .text-line .word", {
+        opacity: 1,
+        delay: 1.5,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+      gsapWithCSS.to(".hero__link", {
+        opacity: 1,
+        delay: 2.5,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+    }
     const textLine = document.querySelectorAll(".text-line");
-    textLine.forEach((text) => {
-      if (!text.closest(".hero")) {
-        gsapWithCSS.to(text.querySelectorAll(".word"), {
-          opacity: 1,
-          delay: 0.1,
-          duration: 1,
+    if (textLine.length) {
+      textLine.forEach((text) => {
+        if (!text.closest(".hero")) {
+          gsapWithCSS.to(text.querySelectorAll(".word"), {
+            opacity: 1,
+            delay: 0.1,
+            duration: 1,
+            ease: "power1.inOut",
+            stagger: 0.15,
+            scrollTrigger: {
+              trigger: text,
+              start: "top 100%",
+              end: "bottom bottom",
+              once: true
+            }
+          });
+        }
+      });
+    }
+    if (document.querySelector(".about")) {
+      const aboutImg = document.querySelectorAll(".about__img");
+      aboutImg.forEach((img) => {
+        gsapWithCSS.to(img.querySelector(".overlay"), {
+          scaleY: 0,
+          delay: 0,
+          duration: 1.5,
           ease: "power1.inOut",
-          stagger: 0.15,
+          stagger: 0.1,
           scrollTrigger: {
-            trigger: text,
-            start: "top 100%",
+            trigger: img,
+            start: "top 90%",
             end: "bottom bottom",
             once: true
           }
         });
-      }
-    });
-    gsapWithCSS.to(".hero__link", {
-      opacity: 1,
-      delay: 2.5,
-      duration: 1,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    const aboutImg = document.querySelectorAll(".about__img");
-    aboutImg.forEach((img) => {
-      gsapWithCSS.to(img.querySelector(".overlay"), {
-        scaleY: 0,
-        delay: 0,
-        duration: 1.5,
-        ease: "power1.inOut",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: img,
-          start: "top 90%",
-          end: "bottom bottom",
-          once: true
-        }
+        gsapWithCSS.to(img.querySelector("img"), {
+          scale: 1,
+          delay: 0.1,
+          duration: 1.5,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+            end: "bottom bottom",
+            once: true
+          }
+        });
       });
-      gsapWithCSS.to(img.querySelector("img"), {
-        scale: 1,
+      gsapWithCSS.to(".about__text > *", {
+        opacity: 1,
         delay: 0.1,
-        duration: 1.5,
+        duration: 1,
         ease: "power1.inOut",
-        stagger: 0.1,
+        stagger: 0.15,
         scrollTrigger: {
-          trigger: img,
+          trigger: ".about__text",
+          start: "top 100%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+      gsapWithCSS.to(".about__item", {
+        opacity: 1,
+        delay: 0.1,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".about__features",
           start: "top 90%",
           end: "bottom bottom",
           once: true
         }
       });
-    });
-    gsapWithCSS.to(".about__text > *", {
-      opacity: 1,
-      delay: 0.1,
-      duration: 1,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".about__text",
-        start: "top 100%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".about__item", {
-      opacity: 1,
-      delay: 0.1,
-      duration: 1,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".about__features",
-        start: "top 90%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
-    gsapWithCSS.to(".about__item-line", {
-      scaleX: 1,
-      delay: 0.15,
-      duration: 1,
-      ease: "power1.inOut",
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: ".about__features",
-        start: "top 80%",
-        end: "bottom bottom",
-        once: true
-      }
-    });
+      gsapWithCSS.to(".about__item-line", {
+        scaleX: 1,
+        delay: 0.15,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: ".about__features",
+          start: "top 80%",
+          end: "bottom bottom",
+          once: true
+        }
+      });
+    }
   };
   splitText();
   startAnimation();
